@@ -1,5 +1,6 @@
 // import functions and grab DOM elements
 import { getComputers, getPhones, getPizzas, getSpeaker } from './fetch-utils.js';
+import { randomPicDiv } from './render-utils.js';
 
 const pizzaEL = document.querySelector('.pizza');
 const computerEL = document.querySelector('.computer');
@@ -7,21 +8,23 @@ const phoneEL = document.querySelector('.phone');
 const speakerEL = document.querySelector('.speaker');
 // let state
 
-
 window.addEventListener('load', async() => {
     const pizzas = await getPizzas();
     // console.log(pizzas);
 
     for (const pizza of pizzas) {
-        const div = document.createElement('div');
+
+      // const div = document.createElement('div');
         const p = document.createElement('p');
         const p1 = document.createElement('p');
-
-        div.classList.add('pizza-item');
-        p.textContent = pizza.topping;
-        p1.textContent = pizza.sauce;
-        div.append(p, p1);
-        pizzaEL.append(div);
+      
+        let newDiv = randomPicDiv('pizza');
+        // newDiv.classList.add('pizza-item');
+        // div.classList.add('pizza-item');
+        p.textContent = `Topping: ${pizza.topping}`;
+        p1.textContent = `Sauce: ${pizza.sauce}`;
+        newDiv.append(p, p1);
+        pizzaEL.append(newDiv);
     }
 });
 
@@ -38,10 +41,10 @@ window.addEventListener('load', async() => {
         const pRAM = document.createElement('p');
 
         divComputerItem.classList.add('computer-item');
-        pBrand.textContent = computer.BRAND;
-        pSoftware.textContent = computer.SOFTWARE;
-        pStorage.textContent = computer.STORAGE_IN_GB;
-        pRAM.textContent = computer.RAM_IN_GB;
+        pBrand.textContent = `Brand: ${computer.BRAND}`;
+        pSoftware.textContent = `Software: ${computer.SOFTWARE}`;
+        pStorage.textContent = `Storage: ${computer.STORAGE_IN_GB}`;
+        pRAM.textContent = `RAM (GB): ${computer.RAM_IN_GB}`;
 
         divComputerItem.append(pBrand, pSoftware, pStorage, pRAM);
         computerEL.append(divComputerItem);
@@ -63,10 +66,10 @@ window.addEventListener('load', async() => {
 
         divPhoneItem.classList.add('phone-item');
 
-        pBrand.textContent = phone.BRAND;
-        pRELEASEDATE.textContent = phone.REALEASE_DATE;
-        pSIZE.textContent = phone.SIZE_INCHES;
-        pSALES.textContent = phone.SALES_IN_MILLIONS;
+        pBrand.textContent = `Brand: ${phone.BRAND}`;
+        pRELEASEDATE.textContent = `Release Date: ${phone.REALEASE_DATE}`;
+        pSIZE.textContent = `Size (Inches): ${phone.SIZE_INCHES}`;
+        pSALES.textContent = `${phone.SALES_IN_MILLIONS}`;
 
 
         divPhoneItem.append(pBrand, pRELEASEDATE, pSIZE, pSALES);

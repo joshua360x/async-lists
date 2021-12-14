@@ -121,7 +121,7 @@ footer {
     zoom: 2;
     
     background-image: url('https://www.pcworld.com/wp-content/uploads/2021/09/dscf0453_final-100797561-orig.jpg?quality=50&strip=all');
-    background-size: 450px ;
+    background-size: cover ;
     background-repeat: no-repeat;
     background-position: center;
 }
@@ -151,4 +151,37 @@ footer {
 }
 .speaker-item p:hover {
     background-color: rgb(85, 255, 113);
+}
+
+
+
+.randomPicture1:hover{
+    background-image: url('https://picsum.photos/405');
+}
+.randomPicture2:hover{
+    background-image: url('https://picsum.photos/404');
+}
+.randomPicture3:hover{
+    background-image: url('https://picsum.photos/403');
+}
+.randomPicture4:hover{
+    background-image: url('https://picsum.photos/402');
+}
+.randomPicture5:hover{
+    background-image: url('https://picsum.photos/400');
+}
+.randomPicture6:hover{
+    background-image: url('https://picsum.photos/401');
+}
+.randomPicture7:hover{
+    background-image: url('https://picsum.photos/407');
+}
+.randomPicture8:hover{
+    background-image: url('https://picsum.photos/408');
+}
+.randomPicture9:hover{
+    background-image: url('https://picsum.photos/409');
+}
+.randomPicture10:hover{
+    background-image: url('https://picsum.photos/410');
 }

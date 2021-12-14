@@ -30,4 +30,14 @@ export async function getSpeaker() {
     return data;
 }
 
+// export async function postPizza(topping, crust, sauce ) {
+//     const { data } = await client.from('pizza').insert([
+//       { some_column: topping },
+//       { some_column: crust },
+//       { some_column: sauce },
+//     ])
+
+//     return data;
+// }
+
 
