@@ -72,9 +72,9 @@ window.addEventListener('load', async() => {
         divPhoneItem.classList.add('phone-item');
 
         pBrand.textContent = `Brand: ${phone.BRAND}`;
-        pRELEASEDATE.textContent = `Release Date: ${phone.REALEASE_DATE}`;
+        pRELEASEDATE.textContent = `Release Date: ${phone.RELEASE_DATE}`;
         pSIZE.textContent = `Size (Inches): ${phone.SIZE_INCHES}`;
-        pSALES.textContent = `${phone.SALES_IN_MILLIONS}`;
+        pSALES.textContent = `Sales: ${phone.SALES_IN_MILLIONS} Millions`;
 
 
         divPhoneItem.append(pBrand, pRELEASEDATE, pSIZE, pSALES);
