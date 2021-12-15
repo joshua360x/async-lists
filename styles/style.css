@@ -89,3 +89,101 @@ footer {
     background-color: var(--color3);
     box-shadow: var(--shadow);
 }
+
+
+.pizza, 
+.computer,
+.phone,
+.speaker {
+    background-color: antiquewhite;
+    display: flex;
+    width: 60%;
+}
+
+.pizza-item,
+.computer-item,
+.phone-item,
+.speaker-item {
+    border: 1px dotted blue;
+    width: 82%;
+}
+.pizza-item:hover {
+    zoom: 2;
+    
+    background-image: url('https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F9%2F2021%2F04%2F27%2Fbest-pizza-philadelphia-pizzeria-beddia-FT-BLOG0421.jpg');
+    background-size: cover;
+}
+.pizza-item p:hover {
+    background-color: aqua;
+}
+
+.computer-item:hover {
+    zoom: 2;
+    
+    background-image: url('https://www.pcworld.com/wp-content/uploads/2021/09/dscf0453_final-100797561-orig.jpg?quality=50&strip=all');
+    background-size: cover ;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.computer-item p:hover {
+    background-color: aqua;
+}
+
+.phone-item:hover {
+    zoom: 2;
+    background-image: url('https://media.cnn.com/api/v1/images/stellar/prod/210830143935-16-galaxy-z-fold-3-review-underscored.jpg?q=w_4372,h_2593,x_0,y_0,c_fill');
+    background-size: cover ;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.phone-item p:hover {
+    background-color: rgb(180, 230, 230);
+}
+
+
+.speaker-item:hover {
+    zoom: 2;
+    background-image: url('https://www.bassheadspeakers.com/wp-content/uploads/2018/07/Outdoor-Speaker-Wiring-820x615.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: whitesmoke;
+}
+.speaker-item p:hover {
+    background-color: rgb(85, 255, 113);
+}
+
+
+
+.randomPicture1:hover{
+    background-image: url('https://picsum.photos/405');
+}
+.randomPicture2:hover{
+    background-image: url('https://picsum.photos/404');
+}
+.randomPicture3:hover{
+    background-image: url('https://picsum.photos/403');
+}
+.randomPicture4:hover{
+    background-image: url('https://picsum.photos/402');
+}
+.randomPicture5:hover{
+    background-image: url('https://picsum.photos/400');
+}
+.randomPicture6:hover{
+    background-image: url('https://picsum.photos/401');
+}
+.randomPicture7:hover{
+    background-image: url('https://picsum.photos/407');
+}
+.randomPicture8:hover{
+    background-image: url('https://picsum.photos/408');
+}
+.randomPicture9:hover{
+    background-image: url('https://picsum.photos/409');
+}
+.randomPicture10:hover{
+    background-image: url('https://picsum.photos/410');
+}
+
+
