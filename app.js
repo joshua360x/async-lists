@@ -1,11 +1,13 @@
 // import functions and grab DOM elements
-import { getComputers, getPhones, getPizzas, getSpeaker } from './fetch-utils.js';
+import { getComputers, getPhones, getPizzas, getSpeaker, postPizza } from './fetch-utils.js';
 import { randomPicDiv } from './render-utils.js';
 
 const pizzaEL = document.querySelector('.pizza');
 const computerEL = document.querySelector('.computer');
 const phoneEL = document.querySelector('.phone');
 const speakerEL = document.querySelector('.speaker');
+const formEL = document.querySelector('form');
+
 // let state
 
 window.addEventListener('load', async() => {
@@ -14,17 +16,20 @@ window.addEventListener('load', async() => {
 
     for (const pizza of pizzas) {
 
-      // const div = document.createElement('div');
-        const p = document.createElement('p');
-        const p1 = document.createElement('p');
+        renderPizza(pizza);
+      // // const div = document.createElement('div');
+      //   const p = document.createElement('p');
+      //   const p1 = document.createElement('p');
+      //   const p2 = document.createElement('p');
       
-        let newDiv = randomPicDiv('pizza');
-        // newDiv.classList.add('pizza-item');
-        // div.classList.add('pizza-item');
-        p.textContent = `Topping: ${pizza.topping}`;
-        p1.textContent = `Sauce: ${pizza.sauce}`;
-        newDiv.append(p, p1);
-        pizzaEL.append(newDiv);
+      //   let newDiv = randomPicDiv('pizza');
+      //   // newDiv.classList.add('pizza-item');
+      //   // div.classList.add('pizza-item');
+      //   p.textContent = `Topping: ${pizza.topping}`;
+      //   p1.textContent = `Sauce: ${pizza.sauce}`;
+      //   p2.textContent = `Crust: ${pizza.crust}`;
+      //   newDiv.append(p, p1, p2);
+      //   pizzaEL.append(newDiv);
     }
 });
 
@@ -106,3 +111,35 @@ window.addEventListener('load', async() => {
   // get user input
   // use user input to update state 
   // update DOM to reflect the new state
+formEL.addEventListener('submit', async(e) => {
+    e.preventDefault();
+
+    const pizzaInfo = new FormData(formEL);
+    const topping = pizzaInfo.get('topping');
+    const crust = pizzaInfo.get('crust');
+    const sauce = pizzaInfo.get('sauce');
+
+    const pizzaPOST = await postPizza(topping, crust, sauce);
+
+    renderPizza(pizzaPOST[0]);
+
+    formEL.reset();
+});
+
+
+function renderPizza(pizza) {
+        // const div = document.createElement('div');
+    const p = document.createElement('p');
+    const p1 = document.createElement('p');
+    const p2 = document.createElement('p');
+      
+    let newDiv = randomPicDiv('pizza');
+        // newDiv.classList.add('pizza-item');
+        // div.classList.add('pizza-item');
+    p.textContent = `Topping: ${pizza.topping}`;
+    p1.textContent = `Sauce: ${pizza.sauce}`;
+    p2.textContent = `Crust: ${pizza.crust}`;
+
+    newDiv.append(p, p1, p2);
+    pizzaEL.append(newDiv);
+}
